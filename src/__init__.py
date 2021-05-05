@@ -9,3 +9,4 @@ from . import models
 from . import readers
 from . import transformers
 from . import utils
+from . import logger
