@@ -18,7 +18,7 @@ class TextCNN(nn.Module):
 
         Ks = Ks.replace('[', '').replace(']', '').split(",") if isinstance(Ks, str) else Ks
         
-        self.embed = nn.Embedding(V, D)
+        self.embed = nn.Embedding(N, D)
         self.convs = nn.ModuleList([nn.Conv2d(Ci, Co, (K, D)) for K in Ks])
         self.dropout = nn.Dropout(args.dropout_rate)
         self.fc = nn.Linear(len(Ks) * Co, C)
